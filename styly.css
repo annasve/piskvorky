@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* height: 100vh; >> toto ne, to pak nefunguje - pozadí není až dolů*/
+  background: linear-gradient(#615dad, #ffc8da);
+  background-repeat: no-repeat;
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+
+.card {
+  width: 450px;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+.card__image {
+  max-width: 100%
+}

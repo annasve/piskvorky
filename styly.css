@@ -6,7 +6,6 @@ body {
   background: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
   min-height: 100vh;
-  /* padding-bottom: 200px; */
   font-family: Arial, sans-serif;
   color: #ffffff;
   display: flex;
@@ -14,26 +13,35 @@ body {
   align-items: center;
 }
 
-h1 {
-  font-family: "Lobster", cursive;
-}
 
 .card {
   max-width: 350px;
-  border: 2px solid black;
   border-radius: 10px 10px 0 0;
   text-align: center;
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
 }
 
 .card__image {
   max-width: 100%;
   display: block;
+  border-radius: 10px 10px 0 0;
+  /*↑to samé zaoblení rohů jako rodič .card*/
 }
 
 .card__infoblock {
   background-color: #283e50;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+
+h1 {
+  font-family: "Lobster", cursive;
+  font-size: 3rem;
+  letter-spacing: 0.16rem;
 }
 
 .card__description {
@@ -42,4 +50,41 @@ h1 {
 
 .card__buttons {
   display: block;
+  border: none;
+  padding: 1rem 0;
+  font-size: 1rem;
+  /*↑přepsání defaultní hodnoty elementu button*/
+  color: inherit;
+  /*↑přepsání defaultní hodnoty elementu button*/
+  cursor: pointer;
+}
+
+/* .card__buttons a:visited {
+  text-decoration: none;
+} */
+
+.button__link:visited {
+  text-decoration: none;
+}
+
+.card__button-rules {
+  background-color: #1fcca4;
+  border-bottom: 1px solid #283e50;
+}
+
+.card__button-rules:hover {
+  background-color: #1cbb96;
+}
+
+.card__button-start {
+  background-color: #0197f6;
+}
+
+.card__button-start:hover {
+  background-color: #0090e9;
+}
+
+.button__link {
+  text-decoration: none;
+  color: inherit;
 }

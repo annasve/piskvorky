@@ -3,19 +3,35 @@
 }
 
 body {
-  /* height: 100vh; >> toto ne, to pak nefunguje - pozadí není až dolů*/
   background: linear-gradient(#615dad, #ffc8da);
   background-repeat: no-repeat;
-  padding-top: 100px;
+  min-height: 100vh;
   padding-bottom: 200px;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Lobster", cursive;
 }
 
 .card {
-  width: 450px;
-  margin: 0 auto;
+  max-width: 450px;
+  /* width: 450px; */
+  /*nechat width absolutní? 
+  margin: 0 auto; */
   border: 2px solid black;
+  border-radius: 10px 10px 0 0;
+  /* border-radius = shorthand for top-left, top-right, bottom-right, bottom-left */
 }
 
 .card__image {
-  max-width: 100%
+  max-width: 100%;
+}
+
+.card__buttons {
+  display: block;
 }

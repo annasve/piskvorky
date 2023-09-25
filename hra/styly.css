@@ -8,10 +8,53 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #ffffff;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center; */
+  /* SMAZAT tento flex nefungoval úplně ideálné - byl moc úzký SMAZAT*/
+}
+
+main {
+  max-width: 80vmin;
 }
 
 h1 {
   font-family: "Lobster", cursive;
   font-size: 3rem;
   letter-spacing: 0.16rem;
+  text-align: center;
+}
+
+.playing__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  /*SMAZAT aktuálně funguje pro obrázky bez pozadí SMAZAT*/
+}
+
+.button__link,
+.button__link:hover {
+  text-decoration: none;
+  /* border: 2px solid black; */
+  border-radius: 5px;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+/*SMAZAT: ZAMYSLET SE, JESTLI POTŘEBUJU TŘÍDY BUTTON__LINK && pLAYING__CONTROLS--HOME ATP.*/
+
+.playing__controls--home {
+  background: #1fcca4;
+}
+
+.playing__controls--home:hover {
+  background-color: #1cbb96;
+}
+
+.playing__controls--restart {
+  background-color: #0197f6;
+}
+
+.playing__controls--restart:hover {
+  background-color: #0090e9;
 }

@@ -1,3 +1,4 @@
+/*----styly pro celou stránku----*/
 * {
   box-sizing: border-box;
 }
@@ -8,14 +9,18 @@ body {
   min-height: 100vh;
   font-family: Arial, sans-serif;
   color: #ffffff;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  align-items: center; */
-  /* SMAZAT tento flex nefungoval úplně ideálné - byl moc úzký SMAZAT*/
+  align-items: center;
 }
 
 main {
   max-width: 80vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+
 }
 
 h1 {
@@ -25,23 +30,33 @@ h1 {
   text-align: center;
 }
 
-.playing__container {
+/*----styly pro řádek nad herní plochou----*/
+.playing {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
-  /*SMAZAT aktuálně funguje pro obrázky bez pozadí SMAZAT*/
+  align-items: center;
+  min-width: 100%
 }
 
+.playing__player {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.5rem;
+
+}
+
+
+/*----styly pro "playing controls" v řádku nad herním polem----*/
 .button__link,
 .button__link:hover {
   text-decoration: none;
-  /* border: 2px solid black; */
   border-radius: 5px;
   display: inline-block;
   padding: 0.5rem;
 }
-
-/*SMAZAT: ZAMYSLET SE, JESTLI POTŘEBUJU TŘÍDY BUTTON__LINK && pLAYING__CONTROLS--HOME ATP.*/
 
 .playing__controls--home {
   background: #1fcca4;
@@ -57,4 +72,31 @@ h1 {
 
 .playing__controls--restart:hover {
   background-color: #0090e9;
+}
+
+
+/*----styly pro herní pole----*/
+.playing-board {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(30px, 50px));
+  grid-template-rows: repeat(10, minmax(30px, 50px));
+
+  aspect-ratio: 1;
+  /*kvůli velikosti políček při zmenšení obrazovky*/
+}
+
+.playing-board__button {
+  border-radius: 0;
+  border: 1px solid black;
+  /* background-color: rgb(213, 209, 218); */
+  background: #ffffff46;
+
+  aspect-ratio: 1;
+  /*kvůli velikosti políček při zmenšení obrazovky*/
+}
+
+.playing-board__button:hover,
+.playing-board__button:focus {
+  /* background-color: rgb(195, 166, 223); */
+  background: #ffffff93;
 }

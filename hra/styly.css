@@ -79,16 +79,18 @@ h1 {
 .playing-board {
   display: grid;
   grid-template-columns: repeat(10, minmax(30px, 50px));
-  grid-template-rows: repeat(10, minmax(30px, 50px));
+  /*(pokud by zde byla nastavená šířka, tak by šlo použít i jednotku 1fr)*/
 
   aspect-ratio: 1;
   /*kvůli velikosti políček při zmenšení obrazovky*/
+
+  border: 1px solid black;
+  box-shadow: hsla(0, 0%, 0%, 0.200)
 }
 
 .playing-board__button {
   border-radius: 0;
   border: 1px solid black;
-  /* background-color: rgb(213, 209, 218); */
   background: #ffffff46;
   cursor: pointer;
 
@@ -98,6 +100,5 @@ h1 {
 
 .playing-board__button:hover,
 .playing-board__button:focus {
-  /* background-color: rgb(195, 166, 223); */
   background: #ffffff93;
 }

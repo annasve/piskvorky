@@ -102,3 +102,17 @@ h1 {
 .playing-board__button:focus {
   background: #ffffff93;
 }
+
+.playing-board__button--cross {
+  background-image: url("../obrazky/cross-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}
+
+.playing-board__button--circle {
+  background-image: url("../obrazky/circle-black.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 70%;
+}

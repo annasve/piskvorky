@@ -103,16 +103,34 @@ h1 {
   background: #ffffff93;
 }
 
-.playing-board__button--cross {
+.playing-board__button--cross,
+.playing-board__button--cross:hover,
+.playing-board__button--cross:focus {
   background-image: url("../obrazky/cross-black.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70%;
+
+  animation: grow 0.15s 1 forwards;
+  /*name, duration, iteration, fill-mode*/
 }
 
-.playing-board__button--circle {
+.playing-board__button--circle,
+.playing-board__button--circle:hover,
+.playing-board__button--circle:focus {
   background-image: url("../obrazky/circle-black.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 70%;
+
+  animation: grow 0.15s 1 forwards;
+}
+
+
+@keyframes grow {
+  0% {
+    background-size: 30%;
+  }
+
+  100% {
+    background-size: 70%;
+  }
 }

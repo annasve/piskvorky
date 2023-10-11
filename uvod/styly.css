@@ -50,18 +50,15 @@ h1 {
 
 .card__buttons {
   display: block;
-  border: none;
   padding: 1rem 0;
-  font-size: 1rem;
-  /*↑přepsání defaultní hodnoty elementu button*/
-  color: inherit;
-  /*↑přepsání defaultní hodnoty elementu button*/
   cursor: pointer;
 }
 
-/* .card__buttons a:visited {
+
+.button__link {
   text-decoration: none;
-} */
+  color: inherit;
+}
 
 .button__link:visited {
   text-decoration: none;
@@ -82,9 +79,4 @@ h1 {
 
 .card__button-start:hover {
   background-color: #0090e9;
-}
-
-.button__link {
-  text-decoration: none;
-  color: inherit;
 }

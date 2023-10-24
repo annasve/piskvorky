@@ -10,7 +10,7 @@ for (let i = 0; i <= 99; i++) {
 
 const nodeList = document.querySelectorAll('.playing-board__button');
 
-const playerMove = (evt) => {
+const playerMove = async (evt) => {
   let buttonsArray = Array.from(nodeList);
   let nodeItemIndex = buttonsArray.indexOf(evt.target);
 
@@ -39,6 +39,14 @@ const playerMove = (evt) => {
 
   const whoWon = findWinner(currentBoard);
 
+  if (currentPlayer === 'cross' && whoWon === null) {
+    const moveCoordinates = await suggestNextMove(currentBoard);
+    const { x, y } = moveCoordinates;
+
+    const fieldAI = buttonsArray[x + y * 10]; // Najde políčko na příslušné pozici.
+    fieldAI.click();
+  }
+
   const delayAlertWin = () => {
     if (whoWon === 'o' || whoWon === 'x') {
       alert(`Vyhrál hráč se symbolem ${whoWon}.`);
@@ -54,3 +62,22 @@ const playerMove = (evt) => {
 nodeList.forEach((item) => {
   item.addEventListener('click', playerMove);
 });
+
+const suggestNextMove = async (boardforAI) => {
+  const response = await fetch(
+    'https://piskvorky.czechitas-podklady.cz/api/suggest-next-move',
+    {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        board: boardforAI,
+        player: 'x',
+      }),
+    },
+  );
+
+  const data = await response.json();
+  return data.position;
+};
